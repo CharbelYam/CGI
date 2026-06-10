@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GCI Lebanon | General Contracting, Chalets &amp; Interior Fit-Out</title>
+<meta name="description" content="GCI is a Lebanese general contracting and interiors company delivering residential buildings, mountain chalets, stone works, fit-outs, and finished interiors across Lebanon.">
+<meta name="keywords" content="GCI Lebanon, general contracting Lebanon, construction company Lebanon, interior fit out Lebanon, chalets Lebanon, villas Lebanon, residential buildings Lebanon">
+<meta property="og:title" content="GCI Lebanon | General Contracting + Interiors">
+<meta property="og:description" content="Buildings, chalets, stone works, and interiors across Lebanon by GCI.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero/hero.jpg">
+<meta name="theme-color" content="#16181B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@600;700;800&amp;family=Archivo:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "GCI",
+  "alternateName": "General Contracting Interiors",
+  "areaServed": "Lebanon",
+  "url": "https://instagram.com/GCI.LB",
+  "sameAs": ["https://instagram.com/GCI.LB"],
+  "description": "Lebanese general contracting and interiors company working on residential buildings, chalets, stone works, fit-outs, and interiors."
+}
+</script>
+<style>
+  :root{
+    --ink:#16181B;
+    --graphite:#23262A;
+    --concrete:#8A8980;
+    --plaster:#ECE8E1;
+    --plaster-2:#E2DCD2;
+    --paper:#F4F1EB;
+    --brass:#A87C4F;
+    --brass-2:#C29A6B;
+    --line:rgba(22,24,27,.16);
+    --line-light:rgba(236,232,225,.20);
+    --disp:"Archivo Expanded",system-ui,sans-serif;
+    --body:"Archivo",system-ui,sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+    --maxw:1280px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--body);
+    background:var(--plaster);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  img,video{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--brass);color:var(--paper)}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+
+  .mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}
+
+  /* ---------- dimension-line motif ---------- */
+  .dim{display:flex;align-items:center;gap:.7rem;color:var(--concrete)}
+  .dim::before,.dim::after{content:"";height:1px;background:currentColor;flex:0 0 auto;width:22px;opacity:.6}
+  .dim span{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
+
+  /* ---------- header ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    border-bottom:1px solid transparent;
+    transition:background .35s ease,border-color .35s ease,padding .35s ease;
+    padding:18px 0;
+    color:var(--plaster);
+  }
+  header.scrolled{
+    background:rgba(236,232,225,.86);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+    padding:12px 0;
+    color:var(--ink);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:2rem}
+  .brand{display:flex;align-items:baseline;gap:.55rem;font-family:var(--disp);font-weight:800;font-size:1.35rem;letter-spacing:.04em}
+  .brand b{color:var(--brass)}
+  .brand small{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;color:var(--concrete);text-transform:uppercase;font-weight:400}
+  .nav__links{display:flex;align-items:center;gap:2.2rem}
+  .nav__links a{font-size:.82rem;letter-spacing:.04em;font-weight:500;position:relative;padding:4px 0}
+  .nav__links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--brass);transition:width .3s ease}
+  .nav__links a:hover::after{width:100%}
+  .nav__cta{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;border:1px solid currentColor;padding:.6rem 1.1rem;transition:all .25s ease}
+  .nav__cta:hover{background:var(--brass);border-color:var(--brass);color:var(--ink)}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+  .burger span{width:26px;height:2px;background:currentColor;transition:.3s}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:var(--ink);color:var(--plaster);
+    min-height:100vh;display:flex;align-items:flex-end;
+    position:relative;overflow:hidden;padding-bottom:clamp(40px,7vh,90px);
+  }
+  .hero__media{position:absolute;inset:0;z-index:0}
+  .hero__media img,.hero__media video{width:100%;height:100%;object-fit:cover;opacity:.42;filter:grayscale(.25) contrast(1.05)}
+  .hero__media.is-empty img,.hero__media.is-empty video{display:none}
+  .hero__media .ph{
+    position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+    background:
+      repeating-linear-gradient(45deg,#1c1f23 0 18px,#191c1f 18px 36px);
+    color:var(--concrete);
+  }
+  .hero__media.is-empty .ph{display:flex}
+  .hero__grad{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(22,24,27,.55) 0%,rgba(22,24,27,.35) 45%,rgba(22,24,27,.92) 100%)}
+  .hero .wrap{position:relative;z-index:2;width:100%}
+  .hero__eyebrow{color:var(--brass-2);margin-bottom:2rem;display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+  .hero__eyebrow::before{content:"";width:34px;height:1px;background:var(--brass)}
+  .hero h1{
+    font-family:var(--disp);font-weight:700;
+    font-size:clamp(2.4rem,7vw,6rem);line-height:.98;letter-spacing:-.01em;
+    max-width:16ch;text-wrap:balance;
+  }
+  .hero h1 em{font-style:normal;color:var(--brass-2)}
+  .hero__sub{margin-top:1.8rem;max-width:46ch;font-size:clamp(1rem,1.4vw,1.15rem);color:#cfcabf}
+  .hero__actions{margin-top:2.6rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .btn{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;padding:1rem 1.7rem;transition:all .25s ease;border:1px solid transparent;cursor:pointer}
+  .btn--solid{background:var(--brass);color:var(--ink);font-weight:700}
+  .btn--solid:hover{background:var(--brass-2)}
+  .btn--ghost{border-color:rgba(236,232,225,.4);color:var(--plaster)}
+  .btn--ghost:hover{border-color:var(--plaster);background:rgba(236,232,225,.08)}
+
+  /* drafting line drawn under headline */
+  .draftline{margin-top:2.4rem;width:min(560px,80%);height:24px}
+  .draftline line,.draftline path{stroke:var(--brass);stroke-width:1.2;fill:none}
+  .draftline .draw{stroke-dasharray:600;stroke-dashoffset:600;animation:draw 1.6s .4s cubic-bezier(.65,0,.35,1) forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  .draftline text{font-family:var(--mono);font-size:9px;letter-spacing:.18em;fill:var(--brass-2)}
+
+  .hero__scroll{position:absolute;bottom:24px;right:clamp(20px,5vw,64px);z-index:2;display:flex;align-items:center;gap:.6rem;color:var(--concrete)}
+  .hero__scroll .mono{font-size:.62rem}
+  .hero__scroll i{width:1px;height:40px;background:var(--brass);display:block;animation:pulse 2s ease-in-out infinite;transform-origin:top}
+  @keyframes pulse{0%,100%{transform:scaleY(.4);opacity:.5}50%{transform:scaleY(1);opacity:1}}
+
+  /* ---------- stats strip ---------- */
+  .stats{background:var(--graphite);color:var(--plaster);border-top:1px solid var(--line-light)}
+  .stats__grid{display:grid;grid-template-columns:repeat(4,1fr)}
+  .stat{padding:clamp(2rem,4vw,3.2rem) clamp(1rem,3vw,2rem);border-right:1px solid var(--line-light)}
+  .stat:last-child{border-right:0}
+  .stat b{font-family:var(--disp);font-weight:700;font-size:clamp(2rem,4vw,3.2rem);display:block;line-height:1}
+  .stat span{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--concrete);margin-top:.7rem;display:block}
+
+  /* ---------- section frame ---------- */
+  section{position:relative}
+  .block{padding:clamp(5rem,11vw,9rem) 0}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:clamp(2.5rem,5vw,4rem);flex-wrap:wrap}
+  .head__tag{color:var(--brass);margin-bottom:1.1rem}
+  .head h2{font-family:var(--disp);font-weight:700;font-size:clamp(1.9rem,4.5vw,3.4rem);line-height:1.02;letter-spacing:-.01em;max-width:18ch}
+  .head p{max-width:40ch;color:#4c4f52;font-size:1.02rem}
+
+  /* ---------- services ---------- */
+  .svc{border-top:1px solid var(--line)}
+  .svc__row{display:grid;grid-template-columns:90px 1.1fr 1.6fr 120px;gap:1.5rem;align-items:center;padding:2.2rem 0;border-bottom:1px solid var(--line);transition:background .3s ease,padding .3s ease}
+  .svc__row:hover{background:var(--paper)}
+  .svc__num{font-family:var(--mono);color:var(--brass);font-size:.8rem;letter-spacing:.1em}
+  .svc__name{font-family:var(--disp);font-weight:600;font-size:clamp(1.25rem,2.4vw,1.9rem)}
+  .svc__desc{color:#52555a;font-size:.98rem}
+  .svc__tags{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--concrete);text-align:right;line-height:1.9}
+
+  /* ---------- work / gallery ---------- */
+  .work{background:var(--paper)}
+  .filters{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2.5rem}
+  .filters button{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.65rem 1.2rem;border:1px solid var(--line);background:none;cursor:pointer;color:#52555a;transition:all .25s ease}
+  .filters button.active,.filters button:hover{background:var(--ink);color:var(--plaster);border-color:var(--ink)}
+  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(14px,1.6vw,22px)}
+  .work__item{position:relative;overflow:hidden;background:var(--plaster-2);grid-column:span 4;aspect-ratio:4/3;cursor:pointer}
+  .work__item.wide{grid-column:span 8}
+  .work__item.tall{aspect-ratio:3/4}
+  .work__item img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+  .work__item:hover img{transform:scale(1.05)}
+  .work__item.is-empty img{display:none}
+  .work__ph{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;padding:1rem;text-align:center;
+    background:repeating-linear-gradient(45deg,var(--plaster-2) 0 16px,#dad3c7 16px 32px);color:#6c6a60}
+  .work__item.is-empty .work__ph{display:flex}
+  .work__ph .ic{width:34px;height:34px;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;font-family:var(--mono)}
+  .work__ph code{font-family:var(--mono);font-size:.62rem;letter-spacing:.04em;background:rgba(22,24,27,.06);padding:.3rem .5rem}
+  .work__cap{position:absolute;left:0;right:0;bottom:0;padding:1.3rem;background:linear-gradient(0deg,rgba(22,24,27,.88),transparent);color:var(--plaster);transform:translateY(8px);opacity:0;transition:all .4s ease;pointer-events:none}
+  .work__item:hover .work__cap{transform:translateY(0);opacity:1}
+  .work__cap b{font-family:var(--disp);font-weight:600;font-size:1.05rem;display:block}
+  .work__cap span{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-2)}
+
+  /* ---------- media reel ---------- */
+  .reel{background:var(--ink);color:var(--plaster)}
+  .reel .head p{color:#cfcabf}
+  .video-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:clamp(14px,1.6vw,22px)}
+  .video-card{position:relative;background:var(--graphite);overflow:hidden;border:1px solid var(--line-light)}
+  .video-card video{width:100%;aspect-ratio:16/10;object-fit:cover;background:#0f1113}
+  .video-card:first-child video{aspect-ratio:16/8}
+  .video-card:first-child{grid-column:span 1}
+  .video-card__body{padding:1rem 1rem 1.1rem}
+  .video-card__body span{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-2)}
+  .video-card__body b{display:block;margin-top:.35rem;font-family:var(--disp);font-weight:600;font-size:1rem}
+
+  /* ---------- lightbox ---------- */
+  .lightbox{position:fixed;inset:0;z-index:200;background:rgba(12,14,16,.92);display:none;align-items:center;justify-content:center;padding:clamp(18px,4vw,48px)}
+  .lightbox.open{display:flex}
+  .lightbox__inner{max-width:min(1180px,100%);width:100%}
+  .lightbox img{width:100%;max-height:78vh;object-fit:contain;background:#111}
+  .lightbox__cap{display:flex;justify-content:space-between;gap:1rem;align-items:center;margin-top:1rem;color:var(--plaster)}
+  .lightbox__cap b{font-family:var(--disp);font-size:1rem}
+  .lightbox__cap span{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass-2)}
+  .lightbox__close{position:absolute;top:18px;right:18px;width:44px;height:44px;border:1px solid rgba(236,232,225,.35);background:transparent;color:var(--plaster);font-size:1.6rem;line-height:1;cursor:pointer}
+  .lightbox__close:hover{background:var(--plaster);color:var(--ink)}
+
+  /* ---------- process ---------- */
+  .proc__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.5rem,3vw,2.5rem)}
+  .proc__step{border-top:2px solid var(--ink);padding-top:1.4rem}
+  .proc__step b{font-family:var(--mono);font-size:.8rem;color:var(--brass);letter-spacing:.1em;display:block;margin-bottom:1rem}
+  .proc__step h3{font-family:var(--disp);font-weight:600;font-size:1.25rem;margin-bottom:.7rem}
+  .proc__step p{color:#52555a;font-size:.95rem}
+
+  /* ---------- about ---------- */
+  .about{background:var(--ink);color:var(--plaster)}
+  .about__grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+  .about h2{font-family:var(--disp);font-weight:700;font-size:clamp(1.9rem,4vw,3rem);line-height:1.05;margin-bottom:1.6rem}
+  .about h2 em{font-style:normal;color:var(--brass-2)}
+  .about p{color:#cfcabf;font-size:1.05rem;margin-bottom:1.2rem;max-width:50ch}
+  .about__media{aspect-ratio:3/4;background:var(--graphite);position:relative;overflow:hidden}
+  .about__media img{width:100%;height:100%;object-fit:cover}
+  .about__media.is-empty img{display:none}
+  .about__media .ph{position:absolute;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;gap:.6rem;
+    background:repeating-linear-gradient(45deg,#1c1f23 0 16px,#191c1f 16px 32px);color:var(--concrete);font-family:var(--mono);font-size:.62rem;text-align:center;padding:1rem}
+  .about__media.is-empty .ph{display:flex}
+
+  /* ---------- instagram ---------- */
+  .ig{text-align:center}
+  .ig__handle{font-family:var(--disp);font-weight:800;font-size:clamp(2rem,6vw,4.5rem);letter-spacing:-.01em}
+  .ig__handle a:hover{color:var(--brass)}
+  .ig__sub{color:#52555a;margin:1rem auto 2.5rem;max-width:40ch}
+  .ig__grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:3rem}
+  .ig__cell{aspect-ratio:1;background:var(--plaster-2);position:relative;overflow:hidden}
+  .ig__cell img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .ig__cell:hover img{transform:scale(1.08)}
+  .ig__cell.is-empty img{display:none}
+  .ig__cell .ph{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:repeating-linear-gradient(45deg,var(--plaster-2) 0 12px,#dad3c7 12px 24px);color:#6c6a60;font-family:var(--mono);font-size:.55rem;text-align:center;padding:.4rem}
+  .ig__cell.is-empty .ph{display:flex}
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--graphite);color:var(--plaster)}
+  .contact__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,6rem)}
+  .contact h2{font-family:var(--disp);font-weight:700;font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.02;margin-bottom:1.5rem}
+  .contact h2 em{font-style:normal;color:var(--brass-2)}
+  .contact__intro{color:#cfcabf;margin-bottom:2.5rem;max-width:42ch}
+  .info__row{display:flex;justify-content:space-between;padding:1.1rem 0;border-top:1px solid var(--line-light)}
+  .info__row span{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--concrete)}
+  .info__row a,.info__row p{font-size:1rem}
+  .info__row a:hover{color:var(--brass-2)}
+  .form label{display:block;font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--concrete);margin-bottom:.5rem;margin-top:1.3rem}
+  .form label:first-child{margin-top:0}
+  .form input,.form textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line-light);color:var(--plaster);padding:.7rem 0;font-family:var(--body);font-size:1rem;transition:border-color .25s ease}
+  .form input:focus,.form textarea:focus{outline:none;border-color:var(--brass)}
+  .form textarea{resize:vertical;min-height:90px}
+  .form .btn{margin-top:2rem;width:100%}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--ink);color:var(--concrete);padding:3rem 0 2.5rem}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
+  .foot .brand{color:var(--plaster)}
+  .foot__links{display:flex;gap:1.6rem}
+  .foot__links a{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase}
+  .foot__links a:hover{color:var(--brass-2)}
+  .foot__legal{margin-top:2rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;color:#4a4d50;border-top:1px solid var(--line-light);padding-top:1.5rem}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:920px){
+    .nav__links{display:none}
+    .burger{display:flex}
+    .stats__grid{grid-template-columns:repeat(2,1fr)}
+    .stat:nth-child(2){border-right:0}
+    .stat:nth-child(-n+2){border-bottom:1px solid var(--line-light)}
+    .svc__row{grid-template-columns:50px 1fr;row-gap:.6rem}
+    .svc__desc,.svc__tags{grid-column:2}
+    .svc__tags{text-align:left}
+    .proc__grid{grid-template-columns:repeat(2,1fr)}
+    .work__item,.work__item.wide{grid-column:span 6}
+    .about__grid,.contact__grid{grid-template-columns:1fr}
+    .video-grid{grid-template-columns:1fr}
+    .ig__grid{grid-template-columns:repeat(3,1fr)}
+    .mobile-open .nav__links{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--ink);padding:1.5rem clamp(20px,5vw,64px);gap:1.2rem}
+    .mobile-open .nav__links a{color:var(--plaster)}
+  }
+  @media(max-width:560px){
+    .work__item,.work__item.wide{grid-column:span 12}
+    .ig__grid{grid-template-columns:repeat(2,1fr)}
+    .hero__actions{flex-direction:column;align-items:stretch}
+    .btn{text-align:center}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+    .draftline .draw{stroke-dashoffset:0}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="brand">GC<b>I</b> <small>Lebanon</small></a>
+    <nav class="nav__links">
+      <a href="#work">Work</a>
+      <a href="#reel">Reel</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav__cta">Start a project</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero__media">
+    <img src="assets/hero/hero.jpg" alt="Stone exterior and mountain residential work by GCI in Lebanon">
+  </div>
+  <div class="hero__grad"></div>
+  <div class="wrap">
+    <div class="hero__eyebrow mono">General Contracting + Interiors · Lebanon</div>
+    <h1>GCI builds from structure to <em>interiors.</em></h1>
+    <p class="hero__sub">Residential buildings, mountain chalets, stone works, fit-outs, and finished interiors across Lebanon — delivered by one accountable contracting team.</p>
+    <div class="hero__actions">
+      <a href="#work" class="btn btn--solid">View our work</a>
+      <a href="#contact" class="btn btn--ghost">Start a project</a>
+    </div>
+    <svg class="draftline" viewBox="0 0 560 24" aria-hidden="true">
+      <line class="draw" x1="0" y1="12" x2="560" y2="12"/>
+      <line x1="0" y1="6" x2="0" y2="18"/>
+      <line x1="560" y1="6" x2="560" y2="18"/>
+      <line x1="280" y1="8" x2="280" y2="16"/>
+      <text x="120" y="9">STRUCTURE</text>
+      <text x="400" y="9">INTERIORS</text>
+    </svg>
+  </div>
+  <div class="hero__scroll"><span class="mono">Scroll</span><i></i></div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats">
+  <div class="wrap"><div class="stats__grid">
+    <div class="stat reveal"><b>Build</b><span>Concrete, stone, structure</span></div>
+    <div class="stat reveal"><b>Fit-Out</b><span>Joinery, lighting, finishes</span></div>
+    <div class="stat reveal"><b>Homes</b><span>Buildings, villas, chalets</span></div>
+    <div class="stat reveal"><b>GCI.LB</b><span>Project updates on Instagram</span></div>
+  </div></div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="block" id="services">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="head__tag mono">What we do</div>
+        <h2>One team for the build and the finish.</h2>
+      </div>
+      <p>Most projects pass through two or three contractors. GCI keeps the structure, the systems, and the interiors under a single roof — fewer gaps, one point of accountability.</p>
+    </div>
+
+    <div class="svc">
+      <div class="svc__row reveal">
+        <div class="svc__num">01</div>
+        <div class="svc__name">General Contracting</div>
+        <div class="svc__desc">Full structural builds from foundation to roof — concrete, blockwork, MEP coordination, and site management.</div>
+        <div class="svc__tags">Concrete · Structure<br>MEP · Site mgmt</div>
+      </div>
+      <div class="svc__row reveal">
+        <div class="svc__num">02</div>
+        <div class="svc__name">Interior Fit-Out</div>
+        <div class="svc__desc">Finishes, joinery, stonework, lighting and bespoke detailing that turn a shell into a finished home.</div>
+        <div class="svc__tags">Joinery · Stone<br>Lighting · Detail</div>
+      </div>
+      <div class="svc__row reveal">
+        <div class="svc__num">03</div>
+        <div class="svc__name">Chalets &amp; Villas</div>
+        <div class="svc__desc">Standalone homes in the mountains and on the coast, built for the terrain and the climate they sit in.</div>
+        <div class="svc__tags">Mountain · Coastal<br>Bespoke homes</div>
+      </div>
+      <div class="svc__row reveal">
+        <div class="svc__num">04</div>
+        <div class="svc__name">Residential Buildings</div>
+        <div class="svc__desc">Multi-unit and mixed-use developments delivered on programme, from core and shell to handover.</div>
+        <div class="svc__tags">Multi-unit<br>Mixed-use</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section class="block work" id="work">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="head__tag mono">Selected work</div>
+        <h2>Buildings, chalets, and the rooms inside them.</h2>
+      </div>
+      <p>A look at projects across Lebanon. Filter by type, or see everything on Instagram.</p>
+    </div>
+
+    <div class="filters reveal">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="buildings">Buildings</button>
+      <button data-filter="chalets">Chalets &amp; Villas</button>
+      <button data-filter="interiors">Interiors</button>
+      <button data-filter="process">Site progress</button>
+    </div>
+
+    <div class="grid" id="gallery">
+      <figure class="work__item wide reveal" data-cat="buildings" data-title="Mountain Stone Residence" data-meta="Residential exterior · Lebanon">
+        <img src="assets/work/mountain-stone-01.jpg" alt="Stone exterior wall and mountain residence by GCI" loading="lazy">
+        <figcaption class="work__cap"><span>Residential exterior · Lebanon</span><b>Mountain Stone Residence</b></figcaption>
+      </figure>
+      <figure class="work__item tall reveal" data-cat="chalets" data-title="Chalet Approach Works" data-meta="Stone, gate and site works · Lebanon">
+        <img src="assets/work/chalet-approach-01.jpg" alt="Chalet approach and exterior works by GCI" loading="lazy">
+        <figcaption class="work__cap"><span>Stone, gate and site works · Lebanon</span><b>Chalet Approach Works</b></figcaption>
+      </figure>
+      <figure class="work__item reveal" data-cat="interiors" data-title="Salon Fit-Out" data-meta="Finished interior · Lebanon">
+        <img src="assets/work/salon-fitout-01.jpg" alt="Finished salon seating area by GCI" loading="lazy">
+        <figcaption class="work__cap"><span>Finished interior · Lebanon</span><b>Salon Fit-Out</b></figcaption>
+      </figure>
+      <figure class="work__item reveal" data-cat="buildings" data-title="Residential Facade" data-meta="Balcony, railing and facade works · Lebanon">
+        <img src="assets/work/residential-facade-01.jpg" alt="Residential facade and balcony works by GCI" loading="lazy">
+        <figcaption class="work__cap"><span>Facade works · Lebanon</span><b>Residential Facade</b></figcaption>
+      </figure>
+      <figure class="work__item reveal" data-cat="chalets" data-title="Mountain Site Works" data-meta="Stone boundary and approach · Lebanon">
+        <img src="assets/work/mountain-site-01.jpg" alt="Mountain site stone and approach works by GCI" loading="lazy">
+        <figcaption class="work__cap"><span>Mountain works · Lebanon</span><b>Stone Boundary Works</b></figcaption>
+      </figure>
+      <figure class="work__item wide reveal" data-cat="interiors" data-title="Beauty Interior Fit-Out" data-meta="Lighting, furniture and finishes · Lebanon">
+        <img src="assets/work/salon-fitout-02.jpg" alt="Interior fit-out with arched lighting and finishes by GCI" loading="lazy">
+        <figcaption class="work__cap"><span>Lighting, furniture and finishes · Lebanon</span><b>Beauty Interior Fit-Out</b></figcaption>
+      </figure>
+      <figure class="work__item reveal" data-cat="buildings" data-title="Site Stone Works" data-meta="Exterior stone and road edge · Lebanon">
+        <img src="assets/work/site-stone-01.jpg" alt="Exterior stone works and roadside finish by GCI" loading="lazy">
+        <figcaption class="work__cap"><span>Exterior stone · Lebanon</span><b>Site Stone Works</b></figcaption>
+      </figure>
+      <figure class="work__item reveal" data-cat="chalets" data-title="Terrace Structure" data-meta="Metalwork and exterior structure · Lebanon">
+        <img src="assets/work/terrace-structure-01.jpg" alt="Terrace structure and exterior metalwork by GCI" loading="lazy">
+        <figcaption class="work__cap"><span>Exterior structure · Lebanon</span><b>Terrace Structure</b></figcaption>
+      </figure>
+      <figure class="work__item reveal" data-cat="interiors" data-title="Waiting Lounge" data-meta="Furniture and floor finish · Lebanon">
+        <img src="assets/work/salon-lounge-01.jpg" alt="Finished waiting lounge interior by GCI" loading="lazy">
+        <figcaption class="work__cap"><span>Furniture and floor finish · Lebanon</span><b>Waiting Lounge</b></figcaption>
+      </figure>
+      <figure class="work__item reveal" data-cat="interiors" data-title="Arched Display Joinery" data-meta="Custom display and lighting · Lebanon">
+        <img src="assets/work/arched-display-01.jpg" alt="Arched display shelving with warm lighting by GCI" loading="lazy">
+        <figcaption class="work__cap"><span>Custom display · Lebanon</span><b>Arched Display Joinery</b></figcaption>
+      </figure>
+      <figure class="work__item wide reveal" data-cat="process" data-title="Interior Frame Stage" data-meta="Partitions and ceiling works · Lebanon">
+        <img src="assets/work/process-frame-01.jpg" alt="Interior framing and ceiling works in progress by GCI" loading="lazy">
+        <figcaption class="work__cap"><span>Site progress · Lebanon</span><b>Interior Frame Stage</b></figcaption>
+      </figure>
+      <figure class="work__item reveal" data-cat="interiors" data-title="Lighting Detail" data-meta="Ceiling detail and track lighting · Lebanon">
+        <img src="assets/work/lighting-detail-01.jpg" alt="Ceiling and lighting detail by GCI" loading="lazy">
+        <figcaption class="work__cap"><span>Lighting detail · Lebanon</span><b>Ceiling + Track Lighting</b></figcaption>
+      </figure>
+      <figure class="work__item reveal" data-cat="process" data-title="Fit-Out Coordination" data-meta="Finishes under installation · Lebanon">
+        <img src="assets/work/process-fitout-01.jpg" alt="Interior fit-out work in progress by GCI" loading="lazy">
+        <figcaption class="work__cap"><span>Fit-out progress · Lebanon</span><b>Fit-Out Coordination</b></figcaption>
+      </figure>
+      <figure class="work__item reveal" data-cat="buildings" data-title="Storefront Fit-Out" data-meta="Exterior storefront and interior works · Lebanon">
+        <img src="assets/work/storefront-02.jpg" alt="Storefront fit-out exterior by GCI" loading="lazy">
+        <figcaption class="work__cap"><span>Storefront fit-out · Lebanon</span><b>Exterior Storefront</b></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEDIA REEL ============ -->
+<section class="block reel" id="reel">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="head__tag mono">On site</div>
+        <h2>Progress you can actually see.</h2>
+      </div>
+      <p>Short clips from site activity and fit-out work, kept lightweight so the portfolio still loads quickly.</p>
+    </div>
+    <div class="video-grid">
+      <article class="video-card reveal">
+        <video src="assets/video/site-clip-01.mp4" poster="assets/work/mountain-stone-01.jpg" controls preload="metadata" playsinline></video>
+        <div class="video-card__body"><span>Site clip</span><b>Exterior and project progress</b></div>
+      </article>
+      <article class="video-card reveal">
+        <video src="assets/video/site-clip-02.mp4" poster="assets/work/salon-fitout-01.jpg" controls preload="metadata" playsinline></video>
+        <div class="video-card__body"><span>Fit-out clip</span><b>Interior installation detail</b></div>
+      </article>
+      <article class="video-card reveal">
+        <video src="assets/video/site-clip-03.mp4" poster="assets/work/process-frame-01.jpg" controls preload="metadata" playsinline></video>
+        <div class="video-card__body"><span>Progress clip</span><b>Work in motion</b></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="block" id="process">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="head__tag mono">How we work</div>
+        <h2>A clear line from idea to keys.</h2>
+      </div>
+      <p>Every project runs on the same four-stage path, so you always know where things stand.</p>
+    </div>
+    <div class="proc__grid">
+      <div class="proc__step reveal"><b>N°01</b><h3>Consultation</h3><p>We walk the site, understand the brief and budget, and set a realistic scope and timeline.</p></div>
+      <div class="proc__step reveal"><b>N°02</b><h3>Design &amp; Coordination</h3><p>Drawings, materials and engineering are aligned before a single load of concrete arrives.</p></div>
+      <div class="proc__step reveal"><b>N°03</b><h3>Build</h3><p>Structure, systems and interiors progress under one site team, with regular updates.</p></div>
+      <div class="proc__step reveal"><b>N°04</b><h3>Handover</h3><p>Snagging, finishing and a clean handover — the home delivered ready to live in.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="block about" id="about">
+  <div class="wrap">
+    <div class="about__grid">
+      <div class="reveal">
+        <h2>Built in Lebanon, <em>for Lebanon.</em></h2>
+        <p>GCI is a Lebanese general contracting and interiors firm working across residential structures, mountain sites, stone works, and finished commercial interiors.</p>
+        <p>The portfolio brings both sides of the work together: exterior construction that handles Lebanon's terrain, and interior fit-outs that clients live with and customers see every day.</p>
+        <a href="#contact" class="btn btn--solid" style="margin-top:1rem;display:inline-block">Work with us</a>
+      </div>
+      <div class="about__media reveal">
+        <img src="assets/about/about.jpg" alt="Residential exterior and stone work by GCI in Lebanon">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSTAGRAM ============ -->
+<section class="block ig">
+  <div class="wrap">
+    <div class="head__tag mono reveal" style="color:var(--brass)">Follow the build</div>
+    <div class="ig__handle reveal"><a href="https://instagram.com/GCI.LB" target="_blank" rel="noopener">@GCI.LB</a></div>
+    <p class="ig__sub reveal">New projects, site progress and finished spaces — first on Instagram.</p>
+    <a href="https://instagram.com/GCI.LB" target="_blank" rel="noopener" class="btn btn--solid reveal" style="display:inline-block">Open Instagram</a>
+    <div class="ig__grid">
+      <a class="ig__cell reveal" href="https://instagram.com/GCI.LB" target="_blank" rel="noopener"><img src="assets/ig/ig-01.jpg" alt="GCI stone exterior project in Lebanon"></a>
+      <a class="ig__cell reveal" href="https://instagram.com/GCI.LB" target="_blank" rel="noopener"><img src="assets/ig/ig-02.jpg" alt="GCI finished interior fit-out"></a>
+      <a class="ig__cell reveal" href="https://instagram.com/GCI.LB" target="_blank" rel="noopener"><img src="assets/ig/ig-03.jpg" alt="GCI residential exterior works"></a>
+      <a class="ig__cell reveal" href="https://instagram.com/GCI.LB" target="_blank" rel="noopener"><img src="assets/ig/ig-04.jpg" alt="GCI custom display and lighting detail"></a>
+      <a class="ig__cell reveal" href="https://instagram.com/GCI.LB" target="_blank" rel="noopener"><img src="assets/ig/ig-05.jpg" alt="GCI chalet exterior works"></a>
+      <a class="ig__cell reveal" href="https://instagram.com/GCI.LB" target="_blank" rel="noopener"><img src="assets/ig/ig-06.jpg" alt="GCI lounge interior detail"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="block contact" id="contact">
+  <div class="wrap">
+    <div class="contact__grid">
+      <div class="reveal">
+        <h2>Let's build <em>something.</em></h2>
+        <p class="contact__intro">Tell us about your plot, your building, your chalet, or the interior you want to finish. We'll come back with a clear next step.</p>
+        <div class="info__row"><span>Email</span><a href="mailto:hello@gci.lb">hello@gci.lb</a></div>
+        <div class="info__row"><span>Instagram</span><a href="https://instagram.com/GCI.LB" target="_blank" rel="noopener">@GCI.LB</a></div>
+        <div class="info__row"><span>Direct message</span><a href="https://instagram.com/GCI.LB" target="_blank" rel="noopener">Message GCI.LB</a></div>
+        <div class="info__row"><span>Based in</span><p>Lebanon</p></div>
+      </div>
+      <div class="reveal">
+        <form class="form" id="cform">
+          <label for="n">Your name</label>
+          <input id="n" name="n" type="text" placeholder="Full name" required>
+          <label for="p">Phone</label>
+          <input id="p" name="p" type="tel" placeholder="+961 …">
+          <label for="t">Project type</label>
+          <input id="t" name="t" type="text" placeholder="Building · Chalet · Interior fit-out">
+          <label for="m">Tell us about it</label>
+          <textarea id="m" name="m" placeholder="Location, size, timeline, anything useful…"></textarea>
+          <button type="submit" class="btn btn--solid">Send enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a href="#top" class="brand">GC<b>I</b> <small>General Contracting + Interiors</small></a>
+      <div class="foot__links">
+        <a href="#work">Work</a>
+        <a href="#reel">Reel</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="https://instagram.com/GCI.LB" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="foot__legal">© <span id="yr"></span> GCI — General Contracting + Interiors · Lebanon. All rights reserved.</div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox__close" type="button" id="lightboxClose" aria-label="Close image">×</button>
+  <div class="lightbox__inner">
+    <img id="lightboxImg" src="" alt="">
+    <div class="lightbox__cap"><b id="lightboxTitle"></b><span id="lightboxMeta"></span></div>
+  </div>
+</div>
+
+<script>
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // header scroll state
+  const hdr = document.getElementById('hdr');
+  const onScroll = () => hdr.classList.toggle('scrolled', window.scrollY > 40);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // mobile menu
+  const burger = document.getElementById('burger');
+  burger.addEventListener('click', () => document.body.classList.toggle('mobile-open'));
+  document.querySelectorAll('.nav__links a').forEach(a =>
+    a.addEventListener('click', () => document.body.classList.remove('mobile-open')));
+
+  // gallery filter
+  const gallery = document.getElementById('gallery');
+  document.querySelectorAll('.filters button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      gallery.querySelectorAll('.work__item').forEach(item => {
+        const show = f === 'all' || item.dataset.cat === f;
+        item.style.display = show ? '' : 'none';
+      });
+    });
+  });
+
+  // project image lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxTitle = document.getElementById('lightboxTitle');
+  const lightboxMeta = document.getElementById('lightboxMeta');
+  const closeLightbox = () => {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lightboxImg.src = '';
+  };
+  gallery.querySelectorAll('.work__item').forEach(item => {
+    item.addEventListener('click', () => {
+      const img = item.querySelector('img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxTitle.textContent = item.dataset.title || '';
+      lightboxMeta.textContent = item.dataset.meta || '';
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  window.addEventListener('keydown', e => { if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox(); });
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // contact form -> opens email with prefilled details (no backend needed)
+  document.getElementById('cform').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const v = id => encodeURIComponent(document.getElementById(id).value || '—');
+    const body = `Name: ${v('n')}%0APhone: ${v('p')}%0AProject: ${v('t')}%0A%0A${v('m')}`;
+    window.location.href = `mailto:hello@gci.lb?subject=${encodeURIComponent('Project enquiry via website')}&body=${body}`;
+  });
+</script>
+</body>
+</html>
