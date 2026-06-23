@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GCI Lebanon | Premium Chalets, Commercial Fit-Out &amp; Interiors</title>
-<meta name="description" content="GCI is a Lebanese general contracting and interiors company delivering premium chalets, commercial fit-outs, residential spaces, bathroom suites, site works, and finished interiors across Lebanon.">
-<meta name="keywords" content="GCI Lebanon, general contracting Lebanon, construction company Lebanon, commercial fit out Lebanon, interior fit out Lebanon, luxury chalets Lebanon, villas Lebanon, residential interiors Lebanon">
-<meta property="og:title" content="GCI Lebanon | Premium Chalets + Interiors">
-<meta property="og:description" content="Premium chalets, commercial fit-outs, terraces, bathrooms, and finished interiors across Lebanon by GCI.">
+<title>GCI Lebanon | Renovation, Fit-Out &amp; Construction</title>
+<meta name="description" content="GCI is a Lebanese renovation, fit-out, and construction company delivering commercial, residential, tourism, hospitality, wellness, healthcare, and maintenance projects across Lebanon.">
+<meta name="keywords" content="GCI Lebanon, renovation Lebanon, fit out Lebanon, general contracting Lebanon, construction company Lebanon, commercial fit out Lebanon, residential remodeling Lebanon, maintenance Lebanon">
+<meta property="og:title" content="GCI Lebanon | Renovation, Fit-Out + Construction">
+<meta property="og:description" content="Renovation, fit-out, construction, maintenance, and aftercare for commercial, residential, tourism, hospitality, wellness, and healthcare projects in Lebanon.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/hero/hero.jpg">
 <meta name="theme-color" content="#16181B">
@@ -23,7 +23,7 @@
   "areaServed": "Lebanon",
   "url": "https://instagram.com/GCI.LB",
   "sameAs": ["https://instagram.com/GCI.LB"],
-  "description": "Lebanese general contracting and interiors company working on premium chalets, villas, bathroom suites, commercial fit-outs, site works, and finished interiors."
+  "description": "Lebanese renovation, fit-out, and construction company working across commercial, residential, tourism, hospitality, wellness, healthcare, maintenance, and aftercare projects."
 }
 </script>
 <style>
@@ -86,10 +86,24 @@
   .brand{display:flex;align-items:baseline;gap:.55rem;font-family:var(--disp);font-weight:800;font-size:1.35rem;letter-spacing:.04em}
   .brand b{color:var(--brass)}
   .brand small{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;color:var(--concrete);text-transform:uppercase;font-weight:400}
-  .nav__links{display:flex;align-items:center;gap:2.2rem}
-  .nav__links a{font-size:.82rem;letter-spacing:.04em;font-weight:500;position:relative;padding:4px 0}
-  .nav__links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--brass);transition:width .3s ease}
-  .nav__links a:hover::after{width:100%}
+  .nav__links{display:flex;align-items:center;gap:1.5rem}
+  .nav__links a,.nav__drop summary{font-size:.82rem;letter-spacing:.04em;font-weight:500;position:relative;padding:4px 0}
+  .nav__links a::after,.nav__drop summary::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--brass);transition:width .3s ease}
+  .nav__links a:hover::after,.nav__drop:hover summary::after,.nav__drop[open] summary::after{width:100%}
+  .nav__drop{position:relative}
+  .nav__drop summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem}
+  .nav__drop summary::-webkit-details-marker{display:none}
+  .nav__drop summary::before{content:"";order:2;width:6px;height:6px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.75}
+  .nav__menu{
+    position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);
+    min-width:260px;display:none;grid-template-columns:1fr;gap:.2rem;
+    background:rgba(22,24,27,.96);color:var(--plaster);border:1px solid rgba(236,232,225,.16);
+    padding:1rem;box-shadow:0 24px 60px rgba(0,0,0,.28)
+  }
+  .nav__menu--wide{min-width:620px;grid-template-columns:repeat(2,1fr)}
+  .nav__menu a{font-family:var(--body);font-size:.78rem;letter-spacing:.03em;padding:.45rem .55rem;color:var(--plaster)}
+  .nav__menu a:hover{background:rgba(236,232,225,.08);color:var(--brass-2)}
+  .nav__drop:hover .nav__menu,.nav__drop[open] .nav__menu{display:grid}
   .nav__cta{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;border:1px solid currentColor;padding:.6rem 1.1rem;transition:all .25s ease}
   .nav__cta:hover{background:var(--brass);border-color:var(--brass);color:var(--ink)}
   .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
@@ -148,6 +162,9 @@
   .stat:last-child{border-right:0}
   .stat b{font-family:var(--disp);font-weight:700;font-size:clamp(2rem,4vw,3.2rem);display:block;line-height:1}
   .stat span{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--concrete);margin-top:.7rem;display:block}
+  .advantages .stats__grid{grid-template-columns:repeat(3,1fr)}
+  .advantages .stat b{font-size:clamp(1.35rem,2.6vw,2.25rem)}
+  .advantages .stat p{color:#cfcabf;margin-top:1rem;max-width:28ch}
 
   /* ---------- section frame ---------- */
   section{position:relative}
@@ -165,6 +182,22 @@
   .svc__name{font-family:var(--disp);font-weight:600;font-size:clamp(1.25rem,2.4vw,1.9rem)}
   .svc__desc{color:#52555a;font-size:.98rem}
   .svc__tags{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--concrete);text-align:right;line-height:1.9}
+  .service-catalog{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:2.5rem}
+  .service-item{background:var(--plaster);padding:1rem;min-height:96px;display:flex;flex-direction:column;justify-content:space-between;gap:.9rem}
+  .service-item span{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+  .service-item b{font-size:.94rem;line-height:1.25}
+
+  /* ---------- sectors ---------- */
+  .sectors{background:var(--plaster)}
+  .sector-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.6vw,22px)}
+  .sector-card{background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column;min-height:100%}
+  .sector-media{display:grid;grid-template-columns:1.45fr 1fr;gap:6px;padding:6px;background:var(--ink)}
+  .sector-media img{width:100%;height:100%;min-height:110px;object-fit:cover}
+  .sector-media img:first-child{grid-row:span 2}
+  .sector-copy{padding:1.2rem}
+  .sector-copy span{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+  .sector-copy h3{font-family:var(--disp);font-size:1.08rem;line-height:1.12;margin:.55rem 0 .65rem}
+  .sector-copy p{color:#52555a;font-size:.94rem}
 
   /* ---------- work / gallery ---------- */
   .work{background:var(--paper)}
@@ -213,7 +246,7 @@
   .lightbox__close:hover{background:var(--plaster);color:var(--ink)}
 
   /* ---------- process ---------- */
-  .proc__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.5rem,3vw,2.5rem)}
+  .proc__grid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(1.2rem,2vw,2rem)}
   .proc__step{border-top:2px solid var(--ink);padding-top:1.4rem}
   .proc__step b{font-family:var(--mono);font-size:.8rem;color:var(--brass);letter-spacing:.1em;display:block;margin-bottom:1rem}
   .proc__step h3{font-family:var(--disp);font-weight:600;font-size:1.25rem;margin-bottom:.7rem}
@@ -279,22 +312,33 @@
   @media(max-width:920px){
     .nav__links{display:none}
     .burger{display:flex}
-    .stats__grid{grid-template-columns:repeat(2,1fr)}
+    .stats__grid,.advantages .stats__grid{grid-template-columns:repeat(2,1fr)}
     .stat:nth-child(2){border-right:0}
+    .advantages .stat:nth-child(3){border-right:0}
     .stat:nth-child(-n+2){border-bottom:1px solid var(--line-light)}
     .svc__row{grid-template-columns:50px 1fr;row-gap:.6rem}
     .svc__desc,.svc__tags{grid-column:2}
     .svc__tags{text-align:left}
+    .service-catalog{grid-template-columns:repeat(2,1fr)}
+    .sector-grid{grid-template-columns:repeat(2,1fr)}
     .proc__grid{grid-template-columns:repeat(2,1fr)}
     .work__item,.work__item.wide{grid-column:span 6}
     .about__grid,.contact__grid{grid-template-columns:1fr}
     .feature-grid{grid-template-columns:1fr}
     .feature-card:first-child{grid-row:auto}
     .ig__grid{grid-template-columns:repeat(3,1fr)}
-    .mobile-open .nav__links{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--ink);padding:1.5rem clamp(20px,5vw,64px);gap:1.2rem}
-    .mobile-open .nav__links a{color:var(--plaster)}
+    .mobile-open .nav__links{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--ink);padding:1.5rem clamp(20px,5vw,64px);gap:1rem;align-items:stretch;text-align:center}
+    .mobile-open .nav__links a,.mobile-open .nav__drop summary{color:var(--plaster);justify-content:center}
+    .mobile-open .nav__drop{width:100%}
+    .mobile-open .nav__menu{position:static;transform:none;min-width:0;box-shadow:none;background:rgba(236,232,225,.05);border-color:rgba(236,232,225,.14);margin-top:.75rem;grid-template-columns:1fr}
+    .mobile-open .nav__drop:hover .nav__menu{display:none}
+    .mobile-open .nav__drop[open] .nav__menu{display:grid}
   }
   @media(max-width:560px){
+    .stats__grid,.advantages .stats__grid{grid-template-columns:1fr}
+    .stat{border-right:0;border-bottom:1px solid var(--line-light)}
+    .stat:last-child{border-bottom:0}
+    .service-catalog,.sector-grid{grid-template-columns:1fr}
     .work__item,.work__item.wide{grid-column:span 12}
     .ig__grid{grid-template-columns:repeat(2,1fr)}
     .hero__actions{flex-direction:column;align-items:stretch}
@@ -314,12 +358,45 @@
   <div class="wrap nav">
     <a href="#top" class="brand">GC<b>I</b> <small>Lebanon</small></a>
     <nav class="nav__links">
+      <a href="#advantages">Advantages</a>
       <a href="#work">Work</a>
-      <a href="#highlights">Highlights</a>
-      <a href="#services">Services</a>
-      <a href="#process">Process</a>
+      <details class="nav__drop">
+        <summary>Sectors</summary>
+        <div class="nav__menu">
+          <a href="#sectors">Tourism &amp; Hospitality</a>
+          <a href="#sectors">Commercial</a>
+          <a href="#sectors">Residential</a>
+          <a href="#sectors">Wellness &amp; Healthcare</a>
+        </div>
+      </details>
+      <details class="nav__drop">
+        <summary>Services</summary>
+        <div class="nav__menu nav__menu--wide">
+          <a href="#services">General Construction Works</a>
+          <a href="#services">Renovation and Fit-Out Works</a>
+          <a href="#services">Interior Design Implementation</a>
+          <a href="#services">Gypsum Board &amp; Decorative Ceilings</a>
+          <a href="#services">Painting Works</a>
+          <a href="#services">Electrical Installations</a>
+          <a href="#services">Plumbing &amp; Sanitary Works</a>
+          <a href="#services">HVAC Works</a>
+          <a href="#services">Aluminum &amp; Glass Partitions</a>
+          <a href="#services">Flooring Installation</a>
+          <a href="#services">Carpentry &amp; Joinery Works</a>
+          <a href="#services">Maintenance Services</a>
+          <a href="#services">Metal Fabrication Works</a>
+          <a href="#services">Waterproofing &amp; Insulation</a>
+          <a href="#services">Landscaping &amp; Outdoor Works</a>
+          <a href="#services">Project Management &amp; Site Supervision</a>
+          <a href="#services">Demolition &amp; Site Preparation</a>
+          <a href="#services">Custom Furniture Manufacturing</a>
+          <a href="#services">Office and Commercial Fit-Out</a>
+          <a href="#services">Residential Construction &amp; Remodeling</a>
+        </div>
+      </details>
+      <a href="#journey">Client Journey</a>
       <a href="#about">About</a>
-      <a href="#contact" class="nav__cta">Start a project</a>
+      <a href="#contact" class="nav__cta">Request quotation</a>
     </nav>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -328,36 +405,35 @@
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
   <div class="hero__media">
-    <img src="assets/hero/hero.jpg" alt="Mountain chalet terrace and pool project by GCI in Lebanon">
+    <img src="assets/hero/hero.jpg" alt="Renovation, terrace, and fit-out project by GCI in Lebanon">
   </div>
   <div class="hero__grad"></div>
   <div class="wrap">
-    <div class="hero__eyebrow mono">Premium chalets + commercial interiors · Lebanon</div>
-    <h1>Built spaces with a <em>finished point of view.</em></h1>
-    <p class="hero__sub">GCI delivers mountain chalets, commercial fit-outs, bathroom suites, terraces, and finished interiors across Lebanon — built and detailed by one accountable contracting team.</p>
+    <div class="hero__eyebrow mono">Renovation + fit-out + construction · Lebanon</div>
+    <h1>Renovation and fit-out with a <em>finished point of view.</em></h1>
+    <p class="hero__sub">GCI delivers renovations, commercial and residential fit-outs, construction works, maintenance, and aftercare across Lebanon — with one accountable team from consultation to handover.</p>
     <div class="hero__actions">
-      <a href="#work" class="btn btn--solid">View our work</a>
-      <a href="#contact" class="btn btn--ghost">Start a project</a>
+      <a href="#contact" class="btn btn--solid">Request quotation</a>
+      <a href="#sectors" class="btn btn--ghost">View sectors</a>
     </div>
     <svg class="draftline" viewBox="0 0 560 24" aria-hidden="true">
       <line class="draw" x1="0" y1="12" x2="560" y2="12"/>
       <line x1="0" y1="6" x2="0" y2="18"/>
       <line x1="560" y1="6" x2="560" y2="18"/>
       <line x1="280" y1="8" x2="280" y2="16"/>
-      <text x="120" y="9">STRUCTURE</text>
-      <text x="400" y="9">INTERIORS</text>
+      <text x="110" y="9">RENOVATION</text>
+      <text x="390" y="9">AFTERCARE</text>
     </svg>
   </div>
   <div class="hero__scroll"><span class="mono">Scroll</span><i></i></div>
 </section>
 
 <!-- ============ STATS ============ -->
-<section class="stats">
+<section class="stats advantages" id="advantages">
   <div class="wrap"><div class="stats__grid">
-    <div class="stat reveal"><b>Chalets</b><span>Mountain living, terraces, pools</span></div>
-    <div class="stat reveal"><b>Fit-Out</b><span>Commercial and residential finishes</span></div>
-    <div class="stat reveal"><b>Suites</b><span>Bathrooms, spas, living rooms</span></div>
-    <div class="stat reveal"><b>GCI.LB</b><span>Project updates on Instagram</span></div>
+    <div class="stat reveal"><b>One Project Focus</b><span>Full dedication</span><p>We stay dedicated to one main project at a time, giving each site the attention, coordination, and follow-up it deserves.</p></div>
+    <div class="stat reveal"><b>Timeline Control</b><span>Clear delivery</span><p>Planning, procurement, site supervision, and execution are managed to protect the agreed timeline and reduce delays.</p></div>
+    <div class="stat reveal"><b>Aftercare Support</b><span>After-sales</span><p>We remain available after handover for maintenance needs, adjustments, support, and continued client care.</p></div>
   </div></div>
 </section>
 
@@ -367,42 +443,106 @@
     <div class="head reveal">
       <div>
         <div class="head__tag mono">What we do</div>
-        <h2>One team for the shell, systems, and finish.</h2>
+        <h2>Renovation first, construction when the project calls for it.</h2>
       </div>
-      <p>Premium residential and commercial work needs continuity. GCI keeps structure, MEP coordination, custom finishes, and interior delivery under a single accountable team.</p>
+      <p>The main focus is renovation, fit-out, and remodeling for occupied or soon-to-open spaces. Construction remains a secondary strength when a project needs structural works, site preparation, or full execution.</p>
     </div>
 
     <div class="svc">
       <div class="svc__row reveal">
         <div class="svc__num">01</div>
-        <div class="svc__name">General Contracting</div>
-        <div class="svc__desc">Full residential builds from foundation to handover — concrete, blockwork, MEP coordination, and site management.</div>
-        <div class="svc__tags">Concrete · Structure<br>MEP · Site mgmt</div>
+        <div class="svc__name">Renovation &amp; Fit-Out</div>
+        <div class="svc__desc">Commercial, residential, hospitality, and wellness spaces upgraded from shell or existing condition into a finished, usable project.</div>
+        <div class="svc__tags">Primary focus<br>Renovation · Fit-out</div>
       </div>
       <div class="svc__row reveal">
         <div class="svc__num">02</div>
-        <div class="svc__name">Premium Chalets</div>
-        <div class="svc__desc">Mountain homes, terraces, pools, and outdoor living areas shaped around Lebanon's terrain and climate.</div>
-        <div class="svc__tags">Chalets · Terraces<br>Pools · Outdoor</div>
+        <div class="svc__name">Interior Implementation</div>
+        <div class="svc__desc">Design intent, drawings, ceilings, partitions, lighting, finishes, furniture, and custom details implemented on site.</div>
+        <div class="svc__tags">Design execution<br>Finishes · Details</div>
       </div>
       <div class="svc__row reveal">
         <div class="svc__num">03</div>
-        <div class="svc__name">Interior Fit-Out</div>
-        <div class="svc__desc">Finishes, joinery, stonework, lighting and bespoke detailing that turn a shell into a finished home or commercial space.</div>
-        <div class="svc__tags">Joinery · Stone<br>Lighting · Detail</div>
+        <div class="svc__name">Construction Works</div>
+        <div class="svc__desc">General construction, demolition, site preparation, supervision, outdoor works, waterproofing, and structural coordination when needed.</div>
+        <div class="svc__tags">Secondary focus<br>Build · Supervision</div>
       </div>
       <div class="svc__row reveal">
         <div class="svc__num">04</div>
-        <div class="svc__name">Commercial Spaces</div>
-        <div class="svc__desc">Gym, reception, retail, office, and hospitality interiors delivered with durable finishes and precise lighting.</div>
-        <div class="svc__tags">Gyms · Retail<br>Reception · Office</div>
+        <div class="svc__name">Maintenance &amp; Aftercare</div>
+        <div class="svc__desc">Ongoing support after handover, including maintenance, adjustments, repairs, and after-sales follow-up.</div>
+        <div class="svc__tags">Support<br>After-sales · Care</div>
       </div>
-      <div class="svc__row reveal">
-        <div class="svc__num">05</div>
-        <div class="svc__name">Bathroom &amp; Wellness Suites</div>
-        <div class="svc__desc">Stone bathrooms, spa corners, glass partitions, vanity details, and high-finish wet areas.</div>
-        <div class="svc__tags">Bathrooms · Spa<br>Glass · Stone</div>
+    </div>
+
+    <div class="service-catalog reveal">
+      <div class="service-item"><span>01</span><b>General Construction Works</b></div>
+      <div class="service-item"><span>02</span><b>Renovation and Fit-Out Works</b></div>
+      <div class="service-item"><span>03</span><b>Interior Design Implementation</b></div>
+      <div class="service-item"><span>04</span><b>Gypsum Board &amp; Decorative Ceiling Installation</b></div>
+      <div class="service-item"><span>05</span><b>Painting Works</b></div>
+      <div class="service-item"><span>06</span><b>Electrical Installations &amp; Maintenance</b></div>
+      <div class="service-item"><span>07</span><b>Plumbing &amp; Sanitary Works</b></div>
+      <div class="service-item"><span>08</span><b>HVAC Air Conditioning &amp; Ventilation Works</b></div>
+      <div class="service-item"><span>09</span><b>Aluminum &amp; Glass Partitions</b></div>
+      <div class="service-item"><span>10</span><b>Flooring Installation: Tiles, Marble, Vinyl, Parquet</b></div>
+      <div class="service-item"><span>11</span><b>Carpentry &amp; Joinery Works</b></div>
+      <div class="service-item"><span>12</span><b>Metal Fabrication Works</b></div>
+      <div class="service-item"><span>13</span><b>Waterproofing &amp; Insulation</b></div>
+      <div class="service-item"><span>14</span><b>Landscaping &amp; Outdoor Works</b></div>
+      <div class="service-item"><span>15</span><b>Project Management &amp; Site Supervision</b></div>
+      <div class="service-item"><span>16</span><b>Maintenance Services</b></div>
+      <div class="service-item"><span>17</span><b>Demolition &amp; Site Preparation</b></div>
+      <div class="service-item"><span>18</span><b>Custom Furniture Manufacturing &amp; Installation</b></div>
+      <div class="service-item"><span>19</span><b>Office and Commercial Fit-Out Solutions</b></div>
+      <div class="service-item"><span>20</span><b>Residential Construction &amp; Remodeling</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTORS ============ -->
+<section class="block sectors" id="sectors">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="head__tag mono">Sectors</div>
+        <h2>Different spaces, one execution standard.</h2>
       </div>
+      <p>Previous experience is organized by sector so clients can see the kind of environment GCI can renovate, fit out, maintain, or build.</p>
+    </div>
+    <div class="sector-grid">
+      <article class="sector-card reveal">
+        <div class="sector-media">
+          <img src="assets/work/terrace-night-01.jpg" alt="Hospitality terrace and outdoor lounge work by GCI">
+          <img src="assets/work/reception-fitout-01.jpg" alt="Reception interior fit-out by GCI">
+          <img src="assets/work/dining-fitout-01.jpg" alt="Dining interior fit-out by GCI">
+        </div>
+        <div class="sector-copy"><span>Tourism &amp; Hospitality</span><h3>Guest-ready spaces</h3><p>Terraces, lounges, reception areas, restaurants, and hospitality interiors built around comfort, durability, and first impressions.</p></div>
+      </article>
+      <article class="sector-card reveal">
+        <div class="sector-media">
+          <img src="assets/work/gym-fitout-01.jpg" alt="Commercial gym fit-out by GCI">
+          <img src="assets/work/commercial-facade-01.jpg" alt="Commercial facade by GCI">
+          <img src="assets/work/corridor-finish-01.jpg" alt="Commercial corridor finish by GCI">
+        </div>
+        <div class="sector-copy"><span>Commercial</span><h3>Workplaces and customer spaces</h3><p>Office, retail, gym, reception, and commercial fit-out solutions with coordinated finishes, lighting, MEP, and site supervision.</p></div>
+      </article>
+      <article class="sector-card reveal">
+        <div class="sector-media">
+          <img src="assets/work/kitchen-living-01.jpg" alt="Residential kitchen and living fit-out by GCI">
+          <img src="assets/work/window-lounge-01.jpg" alt="Residential lounge by GCI">
+          <img src="assets/work/bathroom-vanity-01.jpg" alt="Residential bathroom vanity by GCI">
+        </div>
+        <div class="sector-copy"><span>Residential</span><h3>Homes, apartments, and villas</h3><p>Remodeling, interior implementation, bathrooms, kitchens, living areas, terraces, and full residential construction when required.</p></div>
+      </article>
+      <article class="sector-card reveal">
+        <div class="sector-media">
+          <img src="assets/work/spa-suite-01.jpg" alt="Wellness suite fit-out by GCI">
+          <img src="assets/work/gym-studio-02.jpg" alt="Wellness and fitness interior by GCI">
+          <img src="assets/work/bath-stone-01.jpg" alt="Wet area and bathroom fit-out by GCI">
+        </div>
+        <div class="sector-copy"><span>Wellness &amp; Healthcare</span><h3>Clean, durable, controlled environments</h3><p>Fitness, wellness, spa, clinic-adjacent, and health-focused interiors where comfort, hygiene, lighting, and maintenance matter.</p></div>
+      </article>
     </div>
   </div>
 </section>
@@ -413,14 +553,14 @@
     <div class="head reveal">
       <div>
         <div class="head__tag mono">Selected work</div>
-        <h2>From site progress to finished rooms.</h2>
+        <h2>Renovation, fit-out, and construction in progress.</h2>
       </div>
-      <p>A sharper look at GCI's work across Lebanon, from active construction and storefront works to chalets, commercial interiors, bathrooms, and custom details.</p>
+      <p>A sharper look at GCI's work across Lebanon, from active construction and storefront works to residential interiors, commercial fit-outs, bathrooms, wellness areas, and custom details.</p>
     </div>
 
     <div class="filters reveal">
       <button class="active" data-filter="all">All</button>
-      <button data-filter="chalets">Chalets &amp; Villas</button>
+      <button data-filter="residential">Residential</button>
       <button data-filter="commercial">Commercial</button>
       <button data-filter="interiors">Interiors</button>
       <button data-filter="bathrooms">Bathrooms</button>
@@ -429,17 +569,17 @@
     </div>
 
     <div class="grid" id="gallery">
-      <figure class="work__item wide reveal" data-cat="chalets" data-title="Mountain Terrace Retreat" data-meta="Pool terrace · Lebanon">
-        <img src="assets/work/chalet-terrace-01.jpg" alt="Mountain chalet terrace and pool finished by GCI in Lebanon" loading="lazy">
-        <figcaption class="work__cap"><span>Pool terrace · Lebanon</span><b>Mountain Terrace Retreat</b></figcaption>
+      <figure class="work__item wide reveal" data-cat="residential" data-title="Private Terrace Retreat" data-meta="Residential terrace · Lebanon">
+        <img src="assets/work/chalet-terrace-01.jpg" alt="Residential terrace and pool finished by GCI in Lebanon" loading="lazy">
+        <figcaption class="work__cap"><span>Residential terrace · Lebanon</span><b>Private Terrace Retreat</b></figcaption>
       </figure>
       <figure class="work__item tall reveal" data-cat="bathrooms" data-title="Stone Bathroom Suite" data-meta="Bathroom fit-out · Lebanon">
         <img src="assets/work/bath-stone-01.jpg" alt="Stone bathroom suite with black basin by GCI" loading="lazy">
         <figcaption class="work__cap"><span>Bathroom fit-out · Lebanon</span><b>Stone Bathroom Suite</b></figcaption>
       </figure>
-      <figure class="work__item reveal" data-cat="interiors" data-title="Panoramic Salon" data-meta="Chalet living room · Lebanon">
-        <img src="assets/work/panoramic-salon-01.jpg" alt="Luxury chalet salon with panoramic mountain view by GCI" loading="lazy">
-        <figcaption class="work__cap"><span>Chalet living room · Lebanon</span><b>Panoramic Salon</b></figcaption>
+      <figure class="work__item reveal" data-cat="residential" data-title="Panoramic Salon" data-meta="Residential living room · Lebanon">
+        <img src="assets/work/panoramic-salon-01.jpg" alt="Residential salon with panoramic view by GCI" loading="lazy">
+        <figcaption class="work__cap"><span>Residential living room · Lebanon</span><b>Panoramic Salon</b></figcaption>
       </figure>
       <figure class="work__item reveal" data-cat="interiors" data-title="Kitchen + Living Fit-Out" data-meta="Open-plan interior · Lebanon">
         <img src="assets/work/kitchen-living-01.jpg" alt="Open plan kitchen and living fit-out by GCI" loading="lazy">
@@ -453,9 +593,9 @@
         <img src="assets/work/reception-fitout-01.jpg" alt="Finished reception lounge and commercial interior by GCI" loading="lazy">
         <figcaption class="work__cap"><span>Commercial reception · Lebanon</span><b>Reception Lounge</b></figcaption>
       </figure>
-      <figure class="work__item reveal" data-cat="chalets" data-title="Fireplace View Lounge" data-meta="Mountain chalet · Lebanon">
-        <img src="assets/work/fireplace-lounge-01.jpg" alt="Mountain chalet lounge with hanging fireplace by GCI" loading="lazy">
-        <figcaption class="work__cap"><span>Mountain chalet · Lebanon</span><b>Fireplace View Lounge</b></figcaption>
+      <figure class="work__item reveal" data-cat="residential" data-title="Fireplace View Lounge" data-meta="Residential lounge · Lebanon">
+        <img src="assets/work/fireplace-lounge-01.jpg" alt="Residential lounge with hanging fireplace by GCI" loading="lazy">
+        <figcaption class="work__cap"><span>Residential lounge · Lebanon</span><b>Fireplace View Lounge</b></figcaption>
       </figure>
       <figure class="work__item wide reveal" data-cat="interiors" data-title="Loft Lounge Fit-Out" data-meta="Custom living space · Lebanon">
         <img src="assets/work/loft-lounge-01.jpg" alt="Loft lounge interior with leather seating and custom finishes by GCI" loading="lazy">
@@ -485,7 +625,7 @@
         <img src="assets/work/dining-fitout-01.jpg" alt="Kitchen and dining interior fit-out by GCI" loading="lazy">
         <figcaption class="work__cap"><span>Kitchen and dining · Lebanon</span><b>Dining Fit-Out</b></figcaption>
       </figure>
-      <figure class="work__item wide reveal" data-cat="chalets" data-title="Indoor-Outdoor Lounge" data-meta="Terrace connection · Lebanon">
+      <figure class="work__item wide reveal" data-cat="residential" data-title="Indoor-Outdoor Lounge" data-meta="Terrace connection · Lebanon">
         <img src="assets/work/indoor-outdoor-01.jpg" alt="Indoor outdoor lounge with terrace connection by GCI" loading="lazy">
         <figcaption class="work__cap"><span>Terrace connection · Lebanon</span><b>Indoor-Outdoor Lounge</b></figcaption>
       </figure>
@@ -501,8 +641,8 @@
         <img src="assets/work/bathroom-vanity-01.jpg" alt="Black stone bathroom vanity detail by GCI" loading="lazy">
         <figcaption class="work__cap"><span>Bathroom detail · Lebanon</span><b>Black Stone Vanity</b></figcaption>
       </figure>
-      <figure class="work__item reveal" data-cat="chalets" data-title="Night Terrace" data-meta="Outdoor lounge · Lebanon">
-        <img src="assets/work/terrace-night-01.jpg" alt="Night terrace lounge and mountain view by GCI" loading="lazy">
+      <figure class="work__item reveal" data-cat="residential" data-title="Night Terrace" data-meta="Outdoor lounge · Lebanon">
+        <img src="assets/work/terrace-night-01.jpg" alt="Night terrace lounge and outdoor view by GCI" loading="lazy">
         <figcaption class="work__cap"><span>Outdoor lounge · Lebanon</span><b>Night Terrace</b></figcaption>
       </figure>
       <figure class="work__item reveal" data-cat="interiors" data-title="Garage Lounge" data-meta="Custom recreation space · Lebanon">
@@ -560,21 +700,22 @@
   </div>
 </section>
 
-<!-- ============ PROCESS ============ -->
-<section class="block" id="process">
+<!-- ============ CLIENT JOURNEY ============ -->
+<section class="block" id="journey">
   <div class="wrap">
     <div class="head reveal">
       <div>
-        <div class="head__tag mono">How we work</div>
-        <h2>A clear line from idea to keys.</h2>
+        <div class="head__tag mono">Client journey</div>
+        <h2>A clear path from consultation to aftercare.</h2>
       </div>
-      <p>Every project runs on the same four-stage path, so you always know where things stand.</p>
+      <p>Every renovation, fit-out, or construction project follows a clear journey so clients understand the next step, the timeline, and the support available after handover.</p>
     </div>
     <div class="proc__grid">
-      <div class="proc__step reveal"><b>N°01</b><h3>Consultation</h3><p>We walk the site, understand the brief and budget, and set a realistic scope and timeline.</p></div>
-      <div class="proc__step reveal"><b>N°02</b><h3>Design &amp; Coordination</h3><p>Drawings, materials and engineering are aligned before a single load of concrete arrives.</p></div>
-      <div class="proc__step reveal"><b>N°03</b><h3>Build</h3><p>Structure, systems and interiors progress under one site team, with regular updates.</p></div>
-      <div class="proc__step reveal"><b>N°04</b><h3>Handover</h3><p>Snagging, finishing and a clean handover — the home delivered ready to live in.</p></div>
+      <div class="proc__step reveal"><b>N°01</b><h3>Discovery &amp; Consultation</h3><p>We meet with the client to understand their vision, requirements, budget, timeline, and project objectives.</p></div>
+      <div class="proc__step reveal"><b>N°02</b><h3>Design &amp; Planning</h3><p>We develop concepts, layouts, material selections, technical drawings, and coordinate all project requirements.</p></div>
+      <div class="proc__step reveal"><b>N°03</b><h3>Build &amp; Execution</h3><p>Our team manages construction, fit-out, procurement, and on-site implementation while protecting quality and schedule.</p></div>
+      <div class="proc__step reveal"><b>N°04</b><h3>Handover &amp; Quality Assurance</h3><p>The completed project is inspected, tested, and handed over so every detail meets the agreed standards.</p></div>
+      <div class="proc__step reveal"><b>N°05</b><h3>Ongoing Support &amp; Aftercare</h3><p>We remain available after completion to address maintenance needs, adjustments, and continued client support.</p></div>
     </div>
   </div>
 </section>
@@ -585,12 +726,13 @@
     <div class="about__grid">
       <div class="reveal">
         <h2>Built in Lebanon, <em>for Lebanon.</em></h2>
-        <p>GCI is a Lebanese general contracting and interiors firm working across chalets, residential structures, commercial fit-outs, terraces, bathroom suites, and finished interiors.</p>
-        <p>The portfolio now puts both stages forward: active site work that proves execution, and finished spaces detailed enough to carry a premium home or commercial venue.</p>
-        <a href="#contact" class="btn btn--solid" style="margin-top:1rem;display:inline-block">Work with us</a>
+        <p>GCI is a Lebanese renovation, fit-out, and construction firm working across tourism and hospitality, commercial, residential, wellness, and healthcare environments.</p>
+        <p><strong>Mission.</strong> To deliver organized, high-quality renovation and fit-out works through dedicated site attention, timeline control, and accountable aftercare.</p>
+        <p><strong>Vision.</strong> To become a trusted Lebanese partner for clients who want one team to manage the details from first consultation to long-term support.</p>
+        <a href="#contact" class="btn btn--solid" style="margin-top:1rem;display:inline-block">Request quotation</a>
       </div>
       <div class="about__media reveal">
-        <img src="assets/about/about.jpg" alt="Night terrace and mountain view finished by GCI in Lebanon">
+        <img src="assets/about/about.jpg" alt="Finished terrace and outdoor living project by GCI in Lebanon">
       </div>
     </div>
   </div>
@@ -604,7 +746,7 @@
     <p class="ig__sub reveal">New project photography, finished spaces and site updates — first on Instagram.</p>
     <a href="https://instagram.com/GCI.LB" target="_blank" rel="noopener" class="btn btn--solid reveal" style="display:inline-block">Open Instagram</a>
     <div class="ig__grid">
-      <a class="ig__cell reveal" href="https://instagram.com/GCI.LB" target="_blank" rel="noopener"><img src="assets/ig/ig-01.jpg" alt="GCI mountain chalet terrace in Lebanon"></a>
+      <a class="ig__cell reveal" href="https://instagram.com/GCI.LB" target="_blank" rel="noopener"><img src="assets/ig/ig-01.jpg" alt="GCI residential terrace in Lebanon"></a>
       <a class="ig__cell reveal" href="https://instagram.com/GCI.LB" target="_blank" rel="noopener"><img src="assets/ig/ig-02.jpg" alt="GCI commercial reception fit-out"></a>
       <a class="ig__cell reveal" href="https://instagram.com/GCI.LB" target="_blank" rel="noopener"><img src="assets/ig/ig-03.jpg" alt="GCI gym interior fit-out"></a>
       <a class="ig__cell reveal" href="https://instagram.com/GCI.LB" target="_blank" rel="noopener"><img src="assets/ig/ig-04.jpg" alt="GCI commercial facade work"></a>
@@ -619,10 +761,11 @@
   <div class="wrap">
     <div class="contact__grid">
       <div class="reveal">
-        <h2>Let's build <em>something.</em></h2>
-        <p class="contact__intro">Tell us about your plot, your building, your chalet, or the interior you want to finish. We'll come back with a clear next step.</p>
+        <h2>Request a <em>quotation.</em></h2>
+        <p class="contact__intro">Tell us about your renovation, fit-out, maintenance need, or construction project. We will come back with a clear next step.</p>
         <div class="info__row"><span>Email</span><a href="mailto:hello@gci.lb">hello@gci.lb</a></div>
         <div class="info__row"><span>Instagram</span><a href="https://instagram.com/GCI.LB" target="_blank" rel="noopener">@GCI.LB</a></div>
+        <div class="info__row"><span>After-sales</span><p>Maintenance, adjustments, and ongoing support after handover</p></div>
         <div class="info__row"><span>Direct message</span><a href="https://instagram.com/GCI.LB" target="_blank" rel="noopener">Message GCI.LB</a></div>
         <div class="info__row"><span>Based in</span><p>Lebanon</p></div>
       </div>
@@ -633,10 +776,10 @@
           <label for="p">Phone</label>
           <input id="p" name="p" type="tel" placeholder="+961 …">
           <label for="t">Project type</label>
-          <input id="t" name="t" type="text" placeholder="Building · Chalet · Commercial fit-out">
+          <input id="t" name="t" type="text" placeholder="Renovation · Commercial fit-out · Maintenance">
           <label for="m">Tell us about it</label>
           <textarea id="m" name="m" placeholder="Location, size, timeline, anything useful…"></textarea>
-          <button type="submit" class="btn btn--solid">Send enquiry</button>
+          <button type="submit" class="btn btn--solid">Request quotation</button>
         </form>
       </div>
     </div>
@@ -650,8 +793,10 @@
       <a href="#top" class="brand">GC<b>I</b> <small>General Contracting + Interiors</small></a>
       <div class="foot__links">
         <a href="#work">Work</a>
-        <a href="#highlights">Highlights</a>
+        <a href="#advantages">Advantages</a>
+        <a href="#sectors">Sectors</a>
         <a href="#services">Services</a>
+        <a href="#journey">Journey</a>
         <a href="#contact">Contact</a>
         <a href="https://instagram.com/GCI.LB" target="_blank" rel="noopener">Instagram</a>
       </div>
@@ -681,7 +826,10 @@
   const burger = document.getElementById('burger');
   burger.addEventListener('click', () => document.body.classList.toggle('mobile-open'));
   document.querySelectorAll('.nav__links a').forEach(a =>
-    a.addEventListener('click', () => document.body.classList.remove('mobile-open')));
+    a.addEventListener('click', () => {
+      document.body.classList.remove('mobile-open');
+      document.querySelectorAll('.nav__drop[open]').forEach(drop => drop.removeAttribute('open'));
+    }));
 
   // gallery filter
   const gallery = document.getElementById('gallery');
@@ -735,7 +883,7 @@
     e.preventDefault();
     const v = id => encodeURIComponent(document.getElementById(id).value || '—');
     const body = `Name: ${v('n')}%0APhone: ${v('p')}%0AProject: ${v('t')}%0A%0A${v('m')}`;
-    window.location.href = `mailto:hello@gci.lb?subject=${encodeURIComponent('Project enquiry via website')}&body=${body}`;
+    window.location.href = `mailto:hello@gci.lb?subject=${encodeURIComponent('Request for quotation via website')}&body=${body}`;
   });
 </script>
 </body>
