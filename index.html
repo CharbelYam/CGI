@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://charbelyam.github.io/CGI/assets/hero/hero.jpg">
 <link rel="canonical" href="https://charbelyam.github.io/CGI/">
 <meta name="theme-color" content="#16181B">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2316181B'/%3E%3Ctext x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-size='38' font-weight='800' fill='%23C29A6B' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2316181B'/%3E%3Cg stroke='%23ECE8E1' stroke-width='3' stroke-linejoin='round'%3E%3Cpath d='M32 8 L54 20 L32 32 L10 20 Z' fill='none'/%3E%3Cpath d='M10 20 L10 44 L32 56 L32 32 Z' fill='none'/%3E%3Cpath d='M54 20 L54 44 L32 56 L32 32 Z' fill='%23A87C4F'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@600;700;800&amp;family=Archivo:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
@@ -30,8 +30,9 @@
   "name": "GCI — General Contracting + Interiors",
   "alternateName": "GCI Lebanon",
   "founder": {"@type": "Person", "name": "Georges Kassis"},
+  "foundingDate": "2019",
   "telephone": "+96171955663",
-  "address": {"@type": "PostalAddress", "addressCountry": "LB"},
+  "address": {"@type": "PostalAddress", "addressLocality": "Halat", "addressCountry": "LB"},
   "areaServed": {"@type": "Country", "name": "Lebanon"},
   "url": "https://charbelyam.github.io/CGI/",
   "image": "https://charbelyam.github.io/CGI/assets/hero/hero.jpg",
@@ -46,7 +47,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     {"@type": "Question", "name": "What kind of projects does GCI take on?", "acceptedAnswer": {"@type": "Answer", "text": "Renovation and fit-out are the main focus — upgrading commercial, residential, hospitality, and wellness spaces. Construction is a secondary strength for structural works, site preparation, or full builds when a project calls for it."}},
-    {"@type": "Question", "name": "Where does GCI work?", "acceptedAnswer": {"@type": "Answer", "text": "Across Lebanon. Recent projects span residential, commercial, hospitality, and wellness spaces in different regions of the country."}},
+    {"@type": "Question", "name": "Where does GCI work?", "acceptedAnswer": {"@type": "Answer", "text": "Across Lebanon, from a main office in Halat and a sub office in Fatqa. Since 2019, GCI has delivered more than 100 projects spanning residential, commercial, hospitality, and wellness spaces."}},
     {"@type": "Question", "name": "How does a project start?", "acceptedAnswer": {"@type": "Answer", "text": "With a discovery and consultation meeting to understand your vision, requirements, budget, and timeline. You then receive a clear quotation and plan before any work begins."}},
     {"@type": "Question", "name": "Do you stay involved after handover?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — aftercare is part of every project. GCI remains available for maintenance, adjustments, and ongoing support after completion."}},
     {"@type": "Question", "name": "What is the fastest way to get a quotation?", "acceptedAnswer": {"@type": "Answer", "text": "WhatsApp is the fastest: message +961 71 955 663 directly, or use the request form below and the team will follow up."}}
@@ -110,7 +111,10 @@
     color:var(--ink);
   }
   .nav{display:flex;align-items:center;justify-content:space-between;gap:2rem}
-  .brand{display:flex;align-items:baseline;gap:.55rem;font-family:var(--disp);font-weight:800;font-size:1.35rem;letter-spacing:.04em}
+  .brand{display:flex;align-items:center;gap:.55rem;font-family:var(--disp);font-weight:800;font-size:1.35rem;letter-spacing:.04em}
+  .brand__mark{width:24px;height:24px;flex:0 0 auto}
+  .brand__mark .face{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}
+  .brand__mark .face--brass{fill:var(--brass);stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}
   .brand b{color:var(--brass)}
   .brand small{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;color:var(--concrete);text-transform:uppercase;font-weight:400}
   .nav__links{display:flex;align-items:center;gap:1.5rem}
@@ -492,7 +496,7 @@
 <!-- ============ HEADER ============ -->
 <header id="hdr">
   <div class="wrap nav">
-    <a href="#top" class="brand">GC<b>I</b> <small>Lebanon</small></a>
+    <a href="#top" class="brand"><svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><path class="face" d="M16 3 L28 10 L16 17 L4 10 Z"/><path class="face" d="M4 10 L4 22 L16 29 L16 17 Z"/><path class="face--brass" d="M28 10 L28 22 L16 29 L16 17 Z"/></svg>GC<b>I</b> <small>Lebanon</small></a>
     <nav class="nav__links" id="navLinks">
       <a href="#advantages">Advantages</a>
       <a href="#work">Work</a>
@@ -547,7 +551,7 @@
   </div>
   <div class="hero__grad"></div>
   <div class="wrap">
-    <div class="hero__eyebrow mono">Renovation + fit-out + construction · Lebanon</div>
+    <div class="hero__eyebrow mono">Est. 2019 · Renovation + fit-out + construction · Lebanon</div>
     <h1>Renovation and fit-out with a <em>finished point of view.</em></h1>
     <p class="hero__sub">GCI delivers renovations, commercial and residential fit-outs, construction works, maintenance, and aftercare across Lebanon — with one accountable team from consultation to handover.</p>
     <div class="hero__actions">
@@ -569,10 +573,10 @@
 <!-- ============ NUMBERS ============ -->
 <section class="stats" id="numbers" aria-label="GCI in numbers">
   <div class="wrap"><div class="stats__grid">
+    <div class="stat reveal"><b><span class="count" data-target="100">0</span>+</b><span>Projects delivered</span></div>
+    <div class="stat reveal"><b><span class="count" data-since="2019">0</span></b><span>Years building · est. 2019</span></div>
     <div class="stat reveal"><b><span class="count" data-target="20">0</span>+</b><span>In-house services</span></div>
     <div class="stat reveal"><b><span class="count" data-target="4">0</span></b><span>Sectors served</span></div>
-    <div class="stat reveal"><b><span class="count" data-target="5">0</span></b><span>Step client journey</span></div>
-    <div class="stat reveal"><b><span class="count" data-target="1">0</span></b><span>Project at a time</span></div>
   </div></div>
 </section>
 
@@ -910,6 +914,7 @@
       <div class="reveal">
         <h2>Built in Lebanon, <em>for Lebanon.</em></h2>
         <p>GCI is a Lebanese renovation, fit-out, and construction firm working across tourism and hospitality, commercial, residential, wellness, and healthcare environments.</p>
+        <p>Established in 2019, GCI has delivered more than 100 projects across Lebanon, working from its main office in Halat and sub office in Fatqa.</p>
         <p><strong>Mission.</strong> To deliver organized, high-quality renovation and fit-out works through dedicated site attention, timeline control, and accountable aftercare.</p>
         <p><strong>Vision.</strong> To become a trusted Lebanese partner for clients who want one team to manage the details from first consultation to long-term support.</p>
         <a href="#contact" class="btn btn--solid" style="margin-top:1rem;display:inline-block">Request quotation</a>
@@ -956,7 +961,7 @@
       </details>
       <details class="faq__item">
         <summary>Where does GCI work?</summary>
-        <p>Across Lebanon. Recent projects span residential, commercial, hospitality, and wellness spaces in different regions of the country.</p>
+        <p>Across Lebanon, from a main office in Halat and a sub office in Fatqa. Since 2019, GCI has delivered more than 100 projects spanning residential, commercial, hospitality, and wellness spaces.</p>
       </details>
       <details class="faq__item">
         <summary>How does a project start?</summary>
@@ -989,7 +994,8 @@
         <div class="info__row"><span>Phone / WhatsApp</span><a href="tel:+96171955663">+961 71 955 663</a></div>
         <div class="info__row"><span>Instagram</span><a href="https://instagram.com/GCI.LB" target="_blank" rel="noopener">@GCI.LB</a></div>
         <div class="info__row"><span>After-sales</span><p>Maintenance, adjustments, and ongoing support after handover</p></div>
-        <div class="info__row"><span>Based in</span><p>Lebanon</p></div>
+        <div class="info__row"><span>Main office</span><p>Halat, Lebanon</p></div>
+        <div class="info__row"><span>Sub office</span><p>Fatqa, Lebanon</p></div>
       </div>
       <div class="reveal">
         <form class="form" id="cform">
@@ -1020,7 +1026,7 @@
 <footer>
   <div class="wrap">
     <div class="foot">
-      <a href="#top" class="brand">GC<b>I</b> <small>General Contracting + Interiors</small></a>
+      <a href="#top" class="brand"><svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><path class="face" d="M16 3 L28 10 L16 17 L4 10 Z"/><path class="face" d="M4 10 L4 22 L16 29 L16 17 Z"/><path class="face--brass" d="M28 10 L28 22 L16 29 L16 17 Z"/></svg>GC<b>I</b> <small>General Contracting + Interiors</small></a>
       <div class="foot__links">
         <a href="#work">Work</a>
         <a href="#advantages">Advantages</a>
@@ -1203,7 +1209,9 @@
   // animated counters
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const runCount = el => {
-    const target = parseInt(el.dataset.target, 10) || 0;
+    const target = el.dataset.since
+      ? new Date().getFullYear() - parseInt(el.dataset.since, 10)
+      : parseInt(el.dataset.target, 10) || 0;
     if (reduceMotion) { el.textContent = target; return; }
     const dur = 1200, start = performance.now();
     const tick = now => {
