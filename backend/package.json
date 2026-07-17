@@ -1,0 +1,13 @@
+{
+  "name": "gci-portfolio-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend API for GCI portfolio quotation requests.",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

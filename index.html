@@ -294,6 +294,11 @@
   .form input:focus,.form textarea:focus{outline:none;border-color:var(--brass)}
   .form textarea{resize:vertical;min-height:90px}
   .form .btn{margin-top:2rem;width:100%}
+  .form .btn:disabled{opacity:.58;cursor:wait}
+  .form__hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .form__status{min-height:1.4rem;margin-top:.9rem;color:#cfcabf;font-size:.9rem}
+  .form__status.ok{color:var(--brass-2)}
+  .form__status.err{color:#ffb4a8}
 
   /* ---------- footer ---------- */
   footer{background:var(--ink);color:var(--concrete);padding:3rem 0 2.5rem}
@@ -771,8 +776,12 @@
       </div>
       <div class="reveal">
         <form class="form" id="cform">
+          <label class="form__hp" for="website">Website</label>
+          <input class="form__hp" id="website" name="website" type="text" autocomplete="off" tabindex="-1">
           <label for="n">Your name</label>
           <input id="n" name="n" type="text" placeholder="Full name" required>
+          <label for="e">Email</label>
+          <input id="e" name="e" type="email" placeholder="name@example.com">
           <label for="p">Phone</label>
           <input id="p" name="p" type="tel" placeholder="+961 …">
           <label for="t">Project type</label>
@@ -780,6 +789,7 @@
           <label for="m">Tell us about it</label>
           <textarea id="m" name="m" placeholder="Location, size, timeline, anything useful…"></textarea>
           <button type="submit" class="btn btn--solid">Request quotation</button>
+          <p class="form__status" id="formStatus" aria-live="polite"></p>
         </form>
       </div>
     </div>
@@ -878,12 +888,84 @@
   }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // contact form -> opens email with prefilled details (no backend needed)
-  document.getElementById('cform').addEventListener('submit', (e) => {
+  // RFQ form -> backend API first, email fallback while static-hosted on GitHub Pages.
+  const cform = document.getElementById('cform');
+  const formStatus = document.getElementById('formStatus');
+  const quoteApiBase = (window.GCI_API_URL || '').replace(/\/$/, '');
+  const defaultQuoteApi = `${window.location.origin}/api/quote`;
+  const quoteEndpoint = quoteApiBase ? `${quoteApiBase}/api/quote` : defaultQuoteApi;
+
+  const setFormStatus = (message, type = '') => {
+    formStatus.textContent = message;
+    formStatus.className = `form__status ${type}`.trim();
+  };
+
+  const getFormValue = id => document.getElementById(id).value.trim();
+
+  const buildMailto = payload => {
+    const body = [
+      `Name: ${payload.name || '—'}`,
+      `Email: ${payload.email || '—'}`,
+      `Phone: ${payload.phone || '—'}`,
+      `Project: ${payload.projectType || '—'}`,
+      '',
+      payload.message || '—'
+    ].map(encodeURIComponent).join('%0A');
+    return `mailto:hello@gci.lb?subject=${encodeURIComponent('Request for quotation via website')}&body=${body}`;
+  };
+
+  const submitQuote = async payload => {
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 4500);
+    try {
+      const response = await fetch(quoteEndpoint, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload),
+        signal: controller.signal
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || !result.ok) {
+        throw new Error(result.error || (result.errors || []).join(' ') || 'Quote API unavailable');
+      }
+      return result;
+    } finally {
+      window.clearTimeout(timeout);
+    }
+  };
+
+  cform.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const v = id => encodeURIComponent(document.getElementById(id).value || '—');
-    const body = `Name: ${v('n')}%0APhone: ${v('p')}%0AProject: ${v('t')}%0A%0A${v('m')}`;
-    window.location.href = `mailto:hello@gci.lb?subject=${encodeURIComponent('Request for quotation via website')}&body=${body}`;
+    const button = cform.querySelector('button[type="submit"]');
+    const payload = {
+      name: getFormValue('n'),
+      email: getFormValue('e'),
+      phone: getFormValue('p'),
+      projectType: getFormValue('t'),
+      message: getFormValue('m'),
+      website: getFormValue('website'),
+      page: window.location.href,
+      source: 'gci-portfolio'
+    };
+
+    if (!payload.name || (!payload.email && !payload.phone)) {
+      setFormStatus('Please add your name and either an email or phone number.', 'err');
+      return;
+    }
+
+    button.disabled = true;
+    setFormStatus('Sending request…');
+
+    try {
+      await submitQuote(payload);
+      setFormStatus('Request received. GCI will follow up with you soon.', 'ok');
+      cform.reset();
+    } catch {
+      setFormStatus('Opening email fallback so your request is not lost…');
+      window.location.href = buildMailto(payload);
+    } finally {
+      button.disabled = false;
+    }
   });
 </script>
 </body>
