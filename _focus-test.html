@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html><body>
+<button id="a">A</button>
+<button id="b">B</button>
+<button id="c">C</button>
+<div id="log"></div>
+<script>
+  window.log = [];
+  document.addEventListener('focusin', e => window.log.push('focusin:' + (e.target.id || e.target.tagName)));
+  document.addEventListener('keydown', e => window.log.push('keydown:' + e.key + ':trusted=' + e.isTrusted));
+</script>
+</body></html>
